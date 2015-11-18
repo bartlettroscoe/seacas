@@ -1,0 +1,33 @@
+EXTRA_ARGS=$@
+
+### Change this to point to the compilers you want to use
+CC=gcc
+
+### Change this to point to the root of your SEACAS sources...
+ACCESS=/Users/gdsjaar/src/seacas.git
+
+TPL=${ACCESS}
+MPI=OFF
+
+rm -f CMakeCache.txt
+
+cmake  \
+-D SEACASProj_ENABLE_SEACASExodus=ON \
+-D SEACASProj_ENABLE_TESTS=ON \
+-D CMAKE_INSTALL_PREFIX:PATH=${ACCESS} \
+-D BUILD_SHARED_LIBS:BOOL=ON \
+-D CMAKE_C_COMPILER:FILEPATH=${CC} \
+-D TPL_ENABLE_HDF5:BOOL=ON \
+-D TPL_ENABLE_Netcdf:BOOL=ON \
+-D TPL_ENABLE_MPI=${MPI} \
+\
+-D NetCDF_DIR:PATH=${TPL} \
+-D HDF5_ROOT:PATH=${TPL} \
+-D HDF5_NO_SYSTEM_PATHS=ON \
+\
+-D SEACASProj_SKIP_FORTRANCINTERFACE_VERIFY_TEST:BOOL=ON \
+$EXTRA_ARGS \
+../
+
+
+
