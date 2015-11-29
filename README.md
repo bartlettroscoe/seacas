@@ -1,6 +1,6 @@
 # SEACAS  [[Documentation](http://gsjaardema.github.io/seacas/)]
 [![Build Status](https://travis-ci.org/gsjaardema/seacas.svg?branch=master)](https://travis-ci.org/gsjaardema/seacas)
-[![Analysis Status](https://scan.coverity.com/projects/2205/badge.svg?flat=1)](https://scan.coverity.com/projects/seacas)
+[![Analysis Status](https://scan.coverity.com/projects/2205/badge.svg?flat=1)](https://scan.coverity.com/projects/gsjaardema-seacas)
 
 * [Get the sources](#get-the-sources)
 * [Build instructions](#build-instructions)
@@ -69,7 +69,6 @@ The most recent released version is recommended. For use with Exodus, some local
     ```
     #define NC_MAX_DIMS     65536    /* max dimensions per file */
     #define NC_MAX_VARS     524288   /* max variables per file */
-    #define NC_MAX_VAR_DIMS 8        /* max per variable dimensions */
     ```
 
  * `cd netcdf-4.3.3.1` and enter the command:

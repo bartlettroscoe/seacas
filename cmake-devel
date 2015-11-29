@@ -1,7 +1,7 @@
 EXTRA_ARGS=$@
 
-### Change this to point to the root of your SEACAS sources...
-ACCESS=/Users/gdsjaar/src/seacas.git
+### The following assumes you are building in a subdirectory of ACCESS Root
+ACCESS=$(cd ..; pwd)
 
 ### The SEACAS code will install in ${INSTALL_PATH}/bin, ${INSTALL_PATH}/lib, and ${INSTALL_PATH}/include.
 INSTALL_PATH=${ACCESS}
@@ -81,7 +81,6 @@ cmake  \
 -D CMAKE_Fortran_COMPILER:FILEPATH=${FC} \
 -D SEACASProj_SKIP_FORTRANCINTERFACE_VERIFY_TEST:BOOL=ON \
 \
--D TPL_ENABLE_HDF5:BOOL=ON \
 -D TPL_ENABLE_Netcdf:BOOL=ON \
 -D TPL_ENABLE_Matio:BOOL=ON \
 -D TPL_ENABLE_MPI=${MPI} \
