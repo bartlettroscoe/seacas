@@ -108,11 +108,11 @@ the database to an Ioss::Region since fields are created using the
 setting when the meta data of the database is read.  An Ioss::Field
 that stores 64-bit integers will have a type of 'Ioss::Field::INT64'
 and a field that stores 32-bit integers will have a type of
-'Ioss::Field::INTEGER' (Ioss::Field::INT32 can also be used).
+'Ioss::Field::INTEGER' ('Ioss::Field::INT32' can also be used).
 
 The Ioss io_shell application will maintain the integer size of the
 input database to the output database by default.  If the '--64'
-option is specified, the the output database will use 64-bit integers
+option is specified, then the output database will use 64-bit integers
 for all quantities.
 
 ========================================================================
@@ -120,9 +120,12 @@ for all quantities.
 SEACAS Applications
 
 Many of the SEACAS applications have been modified to be 64-bit
-capable. The include:
+capable. They include:
 
+  * conjoin
+  * ejoin
   * epu
+  * exodiff
   * nem_spread
   * nem_slice -- Note that only the linear, random, or scattered
                  decomposition options are allowed for 64-bit integer
@@ -136,33 +139,25 @@ capable. The include:
 	element model; grope and grepos have also read/written the
 	same model, but that is the extent of the testing.
 
-Still need conversion:
-  * exodiff
-  * conjoin
-  * ejoin
-
-
 ========================================================================
 AVAILABILITY:
 
 The 64-bit integer capability is currently available in the following
 locations:
 
- * SEACAS repository
- * Sierra repository
- * Sourceforge exodusII repository
- * Sourceforge seacas repository
-
-The Trilinos repository will be updated as soon as a newer version of
-netcdf is available on the Trilinos build/test machines.
+ * SEACAS repository https://github.com/gsjaardema/seacas.git
+ * Sierra repository (Internal)
+ * Trilinos repository https://github.com/trilinos/Trilinos
 
 ========================================================================
 Other Details:
 
-* Exodus requires netcdf-4.1.2 or later.
+* Exodus requires netcdf-4.1.2 or later; netcdf-4.3.3.1 or later is recommended
 
 * The Nemesis library has been absorbed into the exodus library.
   -- All api functions that were ne_* are now ex_*
   -- A wrapper exists in the old nemesis library that will forward all
      ne_* calls to the corresponding ex_* call to maintain backward 
-     compatability with unconverted applications.
+     compatability with unconverted applications. 
+  -- In other words, we recommend using the exodus library for nemesis
+     routines, but the nemesis library can be used if you want.
