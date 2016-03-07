@@ -13,8 +13,7 @@ defined in one or more face blocks.  If the faces are arbitrary
 polyhedra, then they will have a face type of "nsided" or "NSIDED".
 
 An annotated example of defining an arbitrary polyhedral element block
-consisting of 3 elements is shown below.  The geometry is shown in
-Figure 1.
+consisting of 3 elements is shown below.  
 
 The three elements have the following geometry:
 * Element 1: 5 faces.
