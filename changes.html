@@ -45,7 +45,7 @@
 	  <tr><td>How do I link exodusII for the new netcdf4?</td>
 	  <td>The new netcdf-4 is hdf5-based and requires linking with
 	    hdf5.  The link line should be: <tt>-L${ACCESS}/lib -lexoIIv2c
-	    -lnetcdf -lhdf5_hl -lhdf5 -lz -lm</tt><br>You can also use
+	    -lnetcdf -lhdf5_hl -lhdf5 -ldl -lz -lm</tt><br>You can also use
 	    the output from <tt>`${ACCESS}/bin/nc-config --libs`</tt> 
 	  </td>
 	  </tr>
@@ -477,7 +477,7 @@
     <address><a href="mailto:gdsjaar@sandia.gov">Gregory D Sjaardema</a></address>
 <!-- Created: Tue Nov 17 07:07:27 MST 2009 -->
 <!-- hhmts start -->
-Last modified: Thu Mar 10 08:42:35 MST 2016
+Last modified: Thu Mar 10 08:43:44 MST 2016
 <!-- hhmts end -->
   </body>
 </html>
